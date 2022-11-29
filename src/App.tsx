@@ -1,10 +1,10 @@
-import React from "react";
+import Router from "./Router";
 
 function App() {
   return (
-    <div className="App">
-      <h1>emd</h1>
-    </div>
+    <>
+      <Router />
+    </>
   );
 }
 
