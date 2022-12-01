@@ -20,7 +20,7 @@ export default function TicketLeft() {
   );
 }
 
-const TicketLeftContainer = styled.div`
+const TicketLeftContainer = styled.article`
   width: 100%;
 
   padding: 4.4rem 8.3rem 5.6rem 12.8rem;

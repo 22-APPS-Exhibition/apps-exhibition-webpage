@@ -14,7 +14,7 @@ export default function TicketRight() {
   );
 }
 
-const TicketRightContainer = styled.div`
+const TicketRightContainer = styled.article`
   width: 100%;
   padding: 9rem 11rem;
   padding-bottom: 0;

@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
 	//브라우저 창 width가 1024px보다 작아지는 순간부터 적용
 	//태블릿
     html {
-        font-size: 40%
+        font-size: 30%
     }
     }
     @media all and (max-width: 80rem){
@@ -39,6 +39,14 @@ const GlobalStyle = createGlobalStyle`
     html {
         font-size: 10%
     }
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100vh;
     }
 `;
 
