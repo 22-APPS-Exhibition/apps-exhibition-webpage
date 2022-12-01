@@ -16,10 +16,10 @@ const GlobalStyle = createGlobalStyle`
         background-color: ${theme.colors.bg};
         color: white;
         font-family: 'NeoDunggeunmo';
-        
         /* 1rem = 10px */
         font-size: 62.5%;
     }
+    
 `;
 
 export default GlobalStyle;
