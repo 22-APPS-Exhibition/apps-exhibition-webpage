@@ -36,8 +36,8 @@ const TimeWrapper = styled.footer`
   margin-bottom: 1.2rem;
 
   font-weight: 600;
-  font-size: 48px;
-  line-height: 52px;
+  font-size: 4.8rem;
+  line-height: 5.2rem;
 
   div:first-child {
     margin-bottom: 1.8rem;

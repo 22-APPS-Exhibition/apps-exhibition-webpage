@@ -19,7 +19,6 @@ const TicketWrapper = styled.section`
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
   height: 100vh;
 
   /* @media all and (max-width: 1024px) {
@@ -38,15 +37,8 @@ const TicketContainer = styled.article`
   display: flex;
   justify-content: center;
 
-  /* max-width: 160rem;
-  max-height: 64rem; */
-  /* width: 100%;
-  height: 100vh; */
-  /* height: 100%;
-  width: 100%; */
-
-  /* margin: 28rem 16rem;
-  left: 28rem; */
+  width: 160rem;
+  height: 64rem;
 
   font-family: "Archivo";
   color: black;
