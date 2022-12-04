@@ -5,12 +5,22 @@ import TicketRight from "../components/ticketPage/TicketRight";
 
 export default function TicketPage() {
   return (
-    <TicketContainer>
-      <TicketLeft />
-      <TicketRight />
-    </TicketContainer>
+    <TicketWrapper>
+      <TicketContainer>
+        <TicketLeft />
+        <TicketRight />
+      </TicketContainer>
+    </TicketWrapper>
   );
 }
+
+const TicketWrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+`;
 
 const TicketContainer = styled.section`
   display: flex;
