@@ -123,8 +123,6 @@ const MapContainer = styled.section`
 const Pin = styled.article<iPinProps>`
   position: absolute;
   transform: translate(${({ position }) => position.x}rem, ${({ position }) => position.y}rem);
-  //top: ${({ position }) => position.x}px;
-  //left: ${({ position }) => position.y}px;
 
   cursor: pointer;
   > img {
