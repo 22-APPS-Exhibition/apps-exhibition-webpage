@@ -12,7 +12,7 @@ export default function Router() {
       <Routes>
         <Route path="/" element={<TicketPage />} />
         <Route path="/map" element={<MapPage />} />
-        <Route path="/info" element={<IntroPage />} />
+        <Route path="/intro" element={<IntroPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
       </Routes>

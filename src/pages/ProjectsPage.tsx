@@ -1,18 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { AppsLogo, BackButtonIcon, ProjectExampleImg } from "../assets/assets";
+import { AppsLogo, ProjectExampleImg } from "../assets/assets";
+import Header from "../components/common/Header";
 
 export default function ProjectsPage() {
   return (
     <ArchiveWrapper>
-      <Header>
+      <Header margin={11}>
         <LogoContainer>
           <img src={AppsLogo} alt="앱스 로고" />
           <h1>APPS</h1>
         </LogoContainer>
-        <BackButton>
-          <img src={BackButtonIcon} alt="뒤로가기 버튼" />
-        </BackButton>
       </Header>
       <FiltersContainer>
         <FilterButton>유니티</FilterButton>
@@ -76,45 +74,18 @@ const ArchiveWrapper = styled.section`
   flex-direction: column;
   align-items: center;
 
-  width: 100%;
+  padding: 0 16rem;
 
   font-family: "Archivo";
-`;
-
-const Header = styled.header`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
 `;
 
 const LogoContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-top: 8.3rem;
-  margin-left: 16rem;
 
   > img {
     width: 14rem;
     height: 14rem;
-  }
-
-  > h1 {
-    font-weight: 600;
-    font-size: 6.4rem;
-    line-height: 7rem;
-    color: white;
-  }
-`;
-
-const BackButton = styled.button`
-  margin-top: 8.3rem;
-  margin-right: 16rem;
-  background-color: transparent;
-  border: 0;
-  cursor: pointer;
-  > img {
-    height: 13.3rem;
-    width: 16rem;
   }
 `;
 
