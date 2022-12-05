@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import DescribeBox from "../components/common/DescribeBox";
 import Header from "../components/common/Header";
 
 export default function IntroPage() {
@@ -8,17 +9,18 @@ export default function IntroPage() {
       <Header margin={4.5}>
         <h1>Welcome 이름!</h1>
       </Header>
+      {/* 쿠키 이슈
       <VideoFrame
         src="https://www.youtube.com/embed/sqwiXUv0XkM?autoplay=1&mute=1&loop=1"
         title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      />
-      <IntroTextContainer>
+      /> */}
+      <VideoFrame />
+      <DescribeBox>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor dui nec dui rutrum, in commodo
         sapien rhoncus. Proin non felis et ligula blandit consectetur vitae ac dolor. Donec in metus id leo fringilla
         interdum vitae eget nibh. Mauris aliquam lacus nec tristique molestie. In ornare lectus non nibh porttitor, in
         ullamcorper tortor vestibulum. Nullam in magna faucibus, viverra ligula sit amet, laoreet augue.
-      </IntroTextContainer>
+      </DescribeBox>
       <MembersContainer>
         <MembersHeader>2022 Sookmyung APPS MEMBER</MembersHeader>
       </MembersContainer>
@@ -37,13 +39,12 @@ const IntroWrapper = styled.section`
 `;
 
 const VideoFrame = styled.iframe`
-  width: 100%;
-  height: auto;
-`;
+  width: 160rem;
+  height: 72rem;
+  margin-top: 6rem;
+  margin-bottom: 34rem;
 
-const IntroTextContainer = styled.section`
-  background: #91adff;
-  border: 3rem solid #ccd5ff;
+  background: black;
   border-radius: 5rem;
 `;
 
