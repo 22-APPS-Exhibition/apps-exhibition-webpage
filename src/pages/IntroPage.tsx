@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
 import Header from "../components/common/Header";
 
@@ -23,6 +24,48 @@ export default function IntroPage() {
       </DescribeBox>
       <MembersContainer>
         <MembersHeader>2022 Sookmyung APPS MEMBER</MembersHeader>
+        <ProfilesContainer>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+          <Profile>
+            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <p>Name</p>
+          </Profile>
+        </ProfilesContainer>
       </MembersContainer>
     </IntroWrapper>
   );
@@ -50,7 +93,12 @@ const VideoFrame = styled.iframe`
 
 const MembersContainer = styled.section`
   width: 100%;
+  max-width: 160rem;
+  margin-top: 20rem;
+  padding: 12rem;
+  padding-bottom: 21rem;
   background: white;
+  border-radius: 50px;
 `;
 
 const MembersHeader = styled.header`
@@ -58,4 +106,31 @@ const MembersHeader = styled.header`
   font-size: 6.4rem;
   line-height: 7rem;
   color: black;
+`;
+
+const ProfilesContainer = styled.section`
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 13rem 3rem;
+
+  margin-top: 13rem;
+`;
+
+const Profile = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > img {
+    width: 24rem;
+    height: 24rem;
+    background: #d9d9d9;
+    border-radius: 50%;
+  }
+  > p {
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4.4rem;
+    color: black;
+    margin-top: 4rem;
+  }
 `;

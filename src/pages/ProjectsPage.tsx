@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { AppsLogo, ProjectExampleImg } from "../assets/assets";
+import DescribeBox from "../components/common/DescribeBox";
 import Header from "../components/common/Header";
 
 export default function ProjectsPage() {
