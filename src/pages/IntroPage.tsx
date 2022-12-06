@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
+import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 
 export default function IntroPage() {
@@ -67,6 +68,7 @@ export default function IntroPage() {
           </Profile>
         </ProfilesContainer>
       </MembersContainer>
+      <Footer />
     </IntroWrapper>
   );
 }
@@ -98,7 +100,7 @@ const MembersContainer = styled.section`
   padding: 12rem;
   padding-bottom: 21rem;
   background: white;
-  border-radius: 50px;
+  border-radius: 5rem;
 `;
 
 const MembersHeader = styled.header`

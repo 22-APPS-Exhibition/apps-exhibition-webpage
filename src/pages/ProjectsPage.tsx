@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { AppsLogo, ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
+import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 
 export default function ProjectsPage() {
@@ -62,10 +63,7 @@ export default function ProjectsPage() {
           </div>
         </Project>
       </ProjectsContainer>
-      <Footer>
-        <p>Copyright ⓒ APPS Since 2021 All Rights Reserved.</p>
-        <p>Department APPS of SMWU</p>
-      </Footer>
+      <Footer />
     </ArchiveWrapper>
   );
 }
@@ -157,27 +155,6 @@ const Project = styled.article`
       margin-left: 5rem;
 
       color: black;
-    }
-  }
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 42rem;
-  margin-bottom: 23.2rem;
-
-  > p {
-    font-weight: 400;
-    font-size: 4rem;
-    line-height: 4.4rem;
-    letter-spacing: 0.1em;
-
-    :first-child {
-      margin-bottom: 5.2rem;
     }
   }
 `;
