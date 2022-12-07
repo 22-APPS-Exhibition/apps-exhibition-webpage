@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
+import Profiles from "../components/common/Profiles";
 import VideoFrame from "../components/common/VideoFrame";
 
 export default function ProjectDetailPage() {
@@ -24,7 +26,21 @@ export default function ProjectDetailPage() {
         Donec eu nunc maximus erat viverra fermentum sed ut augue. Aliquam ut ante sollicitudin, lacinia lectus tempor,
         maximus mi.
       </DescribeBox>
-      <DetailContainer></DetailContainer>
+      <Profiles
+        title="Developers"
+        profileList={["은형", "정현", "예린", "고은", "수연"]}
+        profileSize={22}
+        center={true}>
+        <DownloadContainer>
+          <DownloadTitle>Download</DownloadTitle>
+          <Icons>
+            <Icon src={ProjectExampleImg} />
+            <Icon src={ProjectExampleImg} />
+            <Icon src={ProjectExampleImg} />
+            <Icon src={ProjectExampleImg} />
+          </Icons>
+        </DownloadContainer>
+      </Profiles>
       <Footer />
     </ProjectWrapper>
   );
@@ -40,15 +56,34 @@ const ProjectWrapper = styled.section`
   font-family: "Archivo";
 `;
 
-const DetailContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 23.4rem 6.4rem;
-  margin-top: 20rem;
-  padding: 19.3rem 16.8rem;
-
-  border-radius: 5rem;
-  background-color: white;
+const DownloadContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8.5rem;
 `;
 
-// detail box, video 공용으로 빼기
+const DownloadTitle = styled.header`
+  text-align: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 6.4rem;
+  line-height: 7rem;
+  color: black;
+`;
+
+const Icons = styled.section`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 0 3rem;
+  margin-top: 4.5rem;
+`;
+
+const Icon = styled.img`
+  width: 20rem;
+  height: 20rem;
+  background: #d9d9d9;
+  border-radius: 50%;
+`;
