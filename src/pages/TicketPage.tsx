@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import TicketLeft from "../components/ticketPage/TicketLeft";
 import TicketRight from "../components/ticketPage/TicketRight";

@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 export default function TicketLeft() {
+  const [name, setName] = useState("");
+  const navigate = useNavigate();
+
+  const onClickGoBtn = () => {
+    localStorage.setItem("username", name);
+    navigate("/map");
+  };
+
   return (
     <TicketLeftContainer>
       <Title>Apps Air</Title>
@@ -11,9 +20,18 @@ export default function TicketLeft() {
       </Subtitle>
       <Passenger>
         <Name>Passenger Name</Name>
-        <NameForm>
-          <NameInput type="text" placeholder="이름을 넣어주세요." />
-          <NameButton type="button">Go !</NameButton>
+        <NameForm onSubmit={onClickGoBtn}>
+          <NameInput
+            type="text"
+            placeholder="이름을 넣어주세요."
+            value={name || ""}
+            onChange={(e) => {
+              setName(e.target.value);
+            }}
+          />
+          <NameButton type="button" onClick={onClickGoBtn}>
+            Go !
+          </NameButton>
         </NameForm>
       </Passenger>
     </TicketLeftContainer>
@@ -85,7 +103,6 @@ const NameInput = styled.input`
 `;
 
 const NameButton = styled.button`
-  //width: 1.8rem;
   padding: 1.5rem 5.1rem;
 
   font-weight: 700;
