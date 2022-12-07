@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BackButtonIcon } from "../../assets/assets";
 
@@ -8,10 +9,11 @@ interface iHeaderProps {
 }
 
 const Header = ({ children, margin }: iHeaderProps) => {
+  const navigate = useNavigate();
   return (
     <StHeader marginTop={margin ?? 0}>
       {children}
-      <StBackButton>
+      <StBackButton onClick={() => navigate("/map")}>
         <img src={BackButtonIcon} alt="뒤로가기 버튼" />
       </StBackButton>
     </StHeader>
