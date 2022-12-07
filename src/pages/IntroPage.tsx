@@ -7,10 +7,11 @@ import Profiles from "../components/common/Profiles";
 import VideoFrame from "../components/common/VideoFrame";
 
 export default function IntroPage() {
+  const name = localStorage.getItem("username") ?? "guest";
   return (
     <IntroWrapper>
       <Header margin={4.5}>
-        <h1>Welcome 이름!</h1>
+        <h1>Welcome {name}!</h1>
       </Header>
       <VideoFrame />
       <DescribeBox>

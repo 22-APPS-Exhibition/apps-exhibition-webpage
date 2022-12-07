@@ -7,8 +7,12 @@ export default function TicketLeft() {
   const navigate = useNavigate();
 
   const onClickGoBtn = () => {
-    localStorage.setItem("username", name);
-    navigate("/map");
+    if (name) {
+      localStorage.setItem("username", name);
+      navigate("/map");
+    } else {
+      alert("이름을 입력해주세요");
+    }
   };
 
   return (

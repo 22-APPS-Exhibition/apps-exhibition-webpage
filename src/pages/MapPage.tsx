@@ -10,7 +10,7 @@ export default function MapPage() {
   return (
     <MapWrapper>
       <Header>
-        <InfoLink href="/info">
+        <InfoLink href="/intro">
           <img src={InfoImg} alt="소개페이지 아이콘" />
           Information
         </InfoLink>
