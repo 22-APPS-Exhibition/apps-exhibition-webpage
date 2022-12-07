@@ -1,11 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AppsLogo, ProjectExampleImg } from "../assets/assets";
-import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 
 export default function ProjectsPage() {
+  const navigate = useNavigate();
   return (
     <ArchiveWrapper>
       <Header margin={11}>
@@ -20,48 +21,15 @@ export default function ProjectsPage() {
         <FilterButton>유니티 기초</FilterButton>
       </FiltersContainer>
       <ProjectsContainer>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
-        <Project>
-          <img src={ProjectExampleImg} alt="프로젝트 이미지" />
-          <div>
-            <p>Work Name</p>
-            <p>Developer Name</p>
-          </div>
-        </Project>
+        {["work1", "work2", "work3"].map((title, index) => (
+          <Project key={index} onClick={() => navigate(`/projects/${title}`)}>
+            <img src={ProjectExampleImg} alt="프로젝트 이미지" />
+            <div>
+              <p>{title}</p>
+              <p>Developer Name</p>
+            </div>
+          </Project>
+        ))}
       </ProjectsContainer>
       <Footer />
     </ArchiveWrapper>
@@ -129,7 +97,7 @@ const Project = styled.article`
   flex-direction: column;
   align-items: center;
   width: 60rem;
-
+  cursor: pointer;
   > img {
     width: 100%;
     height: 40rem;
