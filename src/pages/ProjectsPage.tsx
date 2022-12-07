@@ -21,11 +21,11 @@ export default function ProjectsPage() {
         <FilterButton>유니티 기초</FilterButton>
       </FiltersContainer>
       <ProjectsContainer>
-        {["work1", "work2", "work3"].map((title, index) => (
-          <Project key={index} onClick={() => navigate(`/projects/${title}`)}>
+        {[1, 2, 3].map((projectId) => (
+          <Project key={projectId} onClick={() => navigate(`/projects/${projectId}`)}>
             <img src={ProjectExampleImg} alt="프로젝트 이미지" />
             <div>
-              <p>{title}</p>
+              <p>{projectId}</p>
               <p>Developer Name</p>
             </div>
           </Project>

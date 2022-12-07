@@ -1,4 +1,5 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
@@ -8,10 +9,11 @@ import Profiles from "../components/common/Profiles";
 import VideoFrame from "../components/common/VideoFrame";
 
 export default function ProjectDetailPage() {
+  const { projectId } = useParams();
   return (
     <ProjectWrapper>
       <Header margin={4.5}>
-        <h1>작품제목</h1>
+        <h1>{projectId}</h1>
       </Header>
       <VideoFrame />
       <DescribeBox>
