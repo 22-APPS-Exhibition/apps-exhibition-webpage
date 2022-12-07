@@ -4,6 +4,7 @@ import { ProjectExampleImg } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
+import VideoFrame from "../components/common/VideoFrame";
 
 export default function IntroPage() {
   return (
@@ -11,11 +12,6 @@ export default function IntroPage() {
       <Header margin={4.5}>
         <h1>Welcome 이름!</h1>
       </Header>
-      {/* 쿠키 이슈
-      <VideoFrame
-        src="https://www.youtube.com/embed/sqwiXUv0XkM?autoplay=1&mute=1&loop=1"
-        title="YouTube video player"
-      /> */}
       <VideoFrame />
       <DescribeBox>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor dui nec dui rutrum, in commodo
@@ -81,16 +77,6 @@ const IntroWrapper = styled.section`
   padding: 0 16rem;
 
   font-family: "Archivo";
-`;
-
-const VideoFrame = styled.iframe`
-  width: 160rem;
-  height: 72rem;
-  margin-top: 6rem;
-  margin-bottom: 34rem;
-
-  background: black;
-  border-radius: 5rem;
 `;
 
 const MembersContainer = styled.section`

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
+import VideoFrame from "../components/common/VideoFrame";
 
 export default function ProjectDetailPage() {
   return (
@@ -10,6 +11,7 @@ export default function ProjectDetailPage() {
       <Header margin={4.5}>
         <h1>작품제목</h1>
       </Header>
+      <VideoFrame />
       <DescribeBox>
         Lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor dui nec dui rutrum,
         in commodo sapien rhoncus. Proin non felis et ligula blandit consectetur vitae ac dolor. Donec in metus id leo
