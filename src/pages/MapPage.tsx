@@ -8,6 +8,48 @@ interface iPinProps {
   position: { x: number; y: number };
 }
 
+const pinPositions: iPinProps[] = [
+  {
+    position: { x: -65, y: -25 },
+  },
+  {
+    position: { x: -45, y: -50 },
+  },
+  {
+    position: { x: -78, y: -38 },
+  },
+  {
+    position: { x: -50, y: 10 },
+  },
+  {
+    position: { x: -45, y: 30 },
+  },
+  {
+    position: { x: -10, y: -10 },
+  },
+  {
+    position: { x: 5, y: 20 },
+  },
+  {
+    position: { x: 10, y: 0 },
+  },
+  {
+    position: { x: 22, y: -13 },
+  },
+  {
+    position: { x: 33, y: -30 },
+  },
+  {
+    position: { x: 63, y: -15 },
+  },
+  {
+    position: { x: 70, y: -43 },
+  },
+  {
+    position: { x: 68, y: 30 },
+  },
+];
+
 export default function MapPage() {
   const [modalOpen, setModalOpen] = useState<boolean>();
 
@@ -25,51 +67,11 @@ export default function MapPage() {
       </Header>
       <MapContainer>
         <img src={MapImg} alt="지도 이미지" />
-        <Pin position={{ x: -65, y: -25 }} onClick={() => setModalOpen(true)}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: -45, y: -50 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: -78, y: -38 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: -50, y: 10 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: -45, y: 30 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-
-        <Pin position={{ x: -10, y: -10 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 5, y: 20 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 10, y: 0 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-
-        <Pin position={{ x: 4, y: -47 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 22, y: -13 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 33, y: -30 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 63, y: -15 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-        <Pin position={{ x: 70, y: -43 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
-
-        <Pin position={{ x: 68, y: 30 }}>
-          <img src={RedPinImg} alt="지도 표시" />
-        </Pin>
+        {pinPositions.map((pin, index) => (
+          <Pin position={pin.position} key={index} onClick={() => setModalOpen(true)}>
+            <img src={RedPinImg} alt="지도 표시" />
+          </Pin>
+        ))}
         <Pin position={{ x: 84, y: 28 }}>
           <img src={YellowPinImg} alt="지도 표시" />
         </Pin>
