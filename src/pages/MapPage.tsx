@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MapImg, InfoImg, TicketImg, RedPinImg, YellowPinImg } from "../assets/assets";
+import MapModal from "../components/mapPage/MapModal";
+import ModalPortal from "../components/mapPage/ModalPortal";
 
 interface iPinProps {
   position: { x: number; y: number };
 }
 
 export default function MapPage() {
+  const [modalOpen, setModalOpen] = useState<boolean>();
+
   return (
     <MapWrapper>
       <Header>
@@ -21,7 +25,7 @@ export default function MapPage() {
       </Header>
       <MapContainer>
         <img src={MapImg} alt="지도 이미지" />
-        <Pin position={{ x: -65, y: -25 }}>
+        <Pin position={{ x: -65, y: -25 }} onClick={() => setModalOpen(true)}>
           <img src={RedPinImg} alt="지도 표시" />
         </Pin>
         <Pin position={{ x: -45, y: -50 }}>
@@ -70,6 +74,11 @@ export default function MapPage() {
           <img src={YellowPinImg} alt="지도 표시" />
         </Pin>
       </MapContainer>
+      {modalOpen && (
+        <ModalPortal closePortal={() => setModalOpen(false)}>
+          <MapModal onClose={() => setModalOpen(false)} />
+        </ModalPortal>
+      )}
     </MapWrapper>
   );
 }
