@@ -36,8 +36,7 @@ const StProfilesContainer = styled.section<{ center: boolean }>`
       flex-direction: column;
       align-items: center;
     `}
-  width: 100%;
-  max-width: 160rem;
+  width: 160rem;
   margin-top: 20rem;
   padding: 12rem;
   padding-bottom: 21rem;

@@ -14,7 +14,7 @@ const StDescribeBox = styled.article`
   border: 3rem solid #ccd5ff;
   border-radius: 5rem;
   color: black;
-  max-width: 160rem;
+  width: 160rem;
   p {
     font-weight: 400;
     font-size: 4rem;
