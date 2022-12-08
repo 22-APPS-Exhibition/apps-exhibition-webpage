@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AppsLogo, ProjectExampleImg } from "../assets/assets";
@@ -6,7 +6,10 @@ import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 
 export default function ProjectsPage() {
+  const categories = ["유니티", "웹/앱", "유니티 기초"];
+  const [activeCat, setActiveCat] = useState("전체");
   const navigate = useNavigate();
+
   return (
     <ArchiveWrapper>
       <Header margin={11}>
@@ -16,9 +19,20 @@ export default function ProjectsPage() {
         </LogoContainer>
       </Header>
       <FiltersContainer>
-        <FilterButton>유니티</FilterButton>
-        <FilterButton>웹/앱</FilterButton>
-        <FilterButton>유니티 기초</FilterButton>
+        {categories.map((category, index) => (
+          <FilterButton
+            key={index}
+            isActive={activeCat === category || activeCat === "전체" ? true : false}
+            value={category}
+            onClick={(e) => {
+              // setActiveCat((prev) =>
+              //   e.currentTarget && prev === e.currentTarget.value ? "전체" : e.currentTarget.value,
+              // );
+              setActiveCat(e.currentTarget.value);
+            }}>
+            {category}
+          </FilterButton>
+        ))}
       </FiltersContainer>
       <ProjectsContainer>
         {[1, 2, 3].map((projectId) => (
@@ -63,10 +77,10 @@ const FiltersContainer = styled.section`
   margin-top: 11.4rem;
 `;
 
-const FilterButton = styled.button`
+const FilterButton = styled.button<{ isActive: boolean }>`
   width: 25rem;
   height: 10rem;
-  background: #04d7a2;
+  background: ${({ isActive }) => (isActive ? "#04D7A2" : "#c2c2c2")};
   border-radius: 3rem;
   border: 0;
   font-weight: 700;
