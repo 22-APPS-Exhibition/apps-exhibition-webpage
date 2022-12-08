@@ -1,29 +1,33 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { BackButtonIcon } from "../../assets/assets";
 
-export default function MapModal({ onClose }: any) {
+interface iMapProps {
+  onClose: () => void;
+  projectId: number;
+}
+
+export default function MapModal({ onClose, projectId }: iMapProps) {
+  const navigate = useNavigate();
   return (
     <Modal>
       <ModalBackground role="presentation" onClick={onClose} />
       <ModalContent>
-        <ModalContentMain>모달내용</ModalContentMain>
-        <ModalContentClose>
-          <Button onClick={onClose}>닫기</Button>
-        </ModalContentClose>
+        <ModalContentHeader>
+          <h1>Lorem</h1>
+          <button onClick={() => navigate(`/projects/${projectId}`)}>
+            <img src={BackButtonIcon} alt="뒤로가기 버튼" />
+          </button>
+        </ModalContentHeader>
+        <ModalVideo />
+        <ModalFooter>Vestibulum porttitor dui nec dui</ModalFooter>
       </ModalContent>
     </Modal>
   );
 }
 
-const ModalContainer = styled.div`
-  position: absolute;
-  display: flex;
-  background: red;
-  width: 100px;
-  height: 100px;
-`;
-
-const Modal = styled.div`
+const Modal = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,44 +39,69 @@ const Modal = styled.div`
   height: 100%;
 `;
 
-const ModalContent = styled.div`
+const ModalContent = styled.article`
   display: flex;
   align-items: center;
   flex-direction: column;
+  min-width: 75rem;
+  min-height: 50rem;
+  padding: 0 7.5rem;
+  background: #91adff;
+  border: 3rem solid #ccd5ff;
+  border-radius: 5rem;
   z-index: 10;
-  width: 300px;
-  padding: 10px 0px;
-  border: 0;
-  border-radius: 5px;
-  background: white;
 `;
 
-const ModalContentClose = styled.div`
-  display: inline-flex;
-  justify-content: center;
-  width: 100%;
-`;
-
-const ModalContentMain = styled.div`
+const ModalContentHeader = styled.header`
   display: flex;
-
-  padding: 1rem;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 6.4rem;
+  > h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 4rem;
+    color: black;
+  }
+  > button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    > img {
+      width: 6rem;
+      height: 5rem;
+    }
+  }
 `;
 
-const ModalBackground = styled.div`
+const ModalVideo = styled.iframe`
+  margin-top: 3.2rem;
+  width: 100%;
+
+  background: white;
+  border-radius: 2rem;
+`;
+
+const ModalFooter = styled.footer`
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin-top: 3rem;
+  margin-bottom: 7.8rem;
+  margin-left: 5rem;
+  font-family: "Archivo";
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 2.6rem;
+  letter-spacing: 0.1em;
+
+  color: #000000;
+`;
+
+const ModalBackground = styled.section`
   position: absolute;
   width: 100%;
   height: 100%;
   background: black;
   opacity: 0.5;
-`;
-
-const Button = styled.div`
-  padding: 5px 20px;
-
-  border: 0;
-  border-radius: 5px;
-  background-color: orange;
-
-  cursor: pointer;
 `;

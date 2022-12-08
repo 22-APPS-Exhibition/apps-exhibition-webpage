@@ -15,8 +15,8 @@ export default function VideoFrame() {
 }
 
 const StVideoFrame = styled.iframe`
-  width: 160rem;
-  height: 72rem;
+  width: 100%;
+  height: auto;
   margin-top: 6rem;
   margin-bottom: 34rem;
 

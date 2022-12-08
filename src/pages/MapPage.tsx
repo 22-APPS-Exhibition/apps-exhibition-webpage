@@ -5,53 +5,68 @@ import MapModal from "../components/mapPage/MapModal";
 import ModalPortal from "../components/mapPage/ModalPortal";
 
 interface iPinProps {
+  pinId: number;
   position: { x: number; y: number };
 }
 
 const pinPositions: iPinProps[] = [
   {
+    pinId: 1,
     position: { x: -65, y: -25 },
   },
   {
+    pinId: 2,
     position: { x: -45, y: -50 },
   },
   {
+    pinId: 3,
     position: { x: -78, y: -38 },
   },
   {
+    pinId: 4,
     position: { x: -50, y: 10 },
   },
   {
+    pinId: 5,
     position: { x: -45, y: 30 },
   },
   {
+    pinId: 6,
     position: { x: -10, y: -10 },
   },
   {
+    pinId: 7,
     position: { x: 5, y: 20 },
   },
   {
+    pinId: 8,
     position: { x: 10, y: 0 },
   },
   {
+    pinId: 9,
     position: { x: 22, y: -13 },
   },
   {
+    pinId: 10,
     position: { x: 33, y: -30 },
   },
   {
+    pinId: 11,
     position: { x: 63, y: -15 },
   },
   {
+    pinId: 12,
     position: { x: 70, y: -43 },
   },
   {
+    pinId: 13,
     position: { x: 68, y: 30 },
   },
 ];
 
 export default function MapPage() {
   const [modalOpen, setModalOpen] = useState<boolean>();
+  const [curPinId, setCurPinId] = useState<number>(0);
 
   return (
     <MapWrapper>
@@ -68,17 +83,25 @@ export default function MapPage() {
       <MapContainer>
         <img src={MapImg} alt="지도 이미지" />
         {pinPositions.map((pin, index) => (
-          <Pin position={pin.position} key={index} onClick={() => setModalOpen(true)}>
+          <Pin
+            position={pin.position}
+            key={index}
+            onClick={() => {
+              setModalOpen(true);
+              setCurPinId(pin.pinId);
+            }}>
             <img src={RedPinImg} alt="지도 표시" />
           </Pin>
         ))}
         <Pin position={{ x: 84, y: 28 }}>
-          <img src={YellowPinImg} alt="지도 표시" />
+          <a href="https://sookmyung-apps.github.io">
+            <img src={YellowPinImg} alt="지도 표시" />
+          </a>
         </Pin>
       </MapContainer>
       {modalOpen && (
         <ModalPortal closePortal={() => setModalOpen(false)}>
-          <MapModal onClose={() => setModalOpen(false)} />
+          <MapModal onClose={() => setModalOpen(false)} projectId={curPinId} />
         </ModalPortal>
       )}
     </MapWrapper>
@@ -131,12 +154,12 @@ const MapContainer = styled.section`
   }
 `;
 
-const Pin = styled.article<iPinProps>`
+const Pin = styled.article<{ position: { x: number; y: number } }>`
   position: absolute;
   transform: translate(${({ position }) => position.x}rem, ${({ position }) => position.y}rem);
 
   cursor: pointer;
-  > img {
+  img {
     height: 8.5rem;
     width: 6.5rem;
   }

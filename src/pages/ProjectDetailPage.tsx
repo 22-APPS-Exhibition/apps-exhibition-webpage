@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import { ApkIcon, GithubIcon, MacIcon, ProjectExampleImg, WindowIcon } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
@@ -50,7 +50,6 @@ export default function ProjectDetailPage() {
   const [currentProject, setCurrentProject] = useState(
     detailDatas.filter((data) => data.projectId.toString() === projectId)[0],
   );
-  const navigate = useNavigate();
 
   return (
     <ProjectWrapper>
