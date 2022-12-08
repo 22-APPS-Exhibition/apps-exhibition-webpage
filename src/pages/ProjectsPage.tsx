@@ -1,14 +1,58 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { AppsLogo, ProjectExampleImg } from "../assets/assets";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 
+interface iProjectsDatas {
+  projectId: number;
+  thumbnail: string;
+  projectName: string;
+  teamName: string;
+  category: "유니티" | "웹/앱" | "유니티 기초";
+}
+
+const projectDatas: iProjectsDatas[] = [
+  {
+    projectId: 1,
+    thumbnail: `${ProjectExampleImg}`,
+    projectName: "프로젝트1",
+    teamName: "팀1",
+    category: "유니티",
+  },
+  {
+    projectId: 2,
+    thumbnail: `${ProjectExampleImg}`,
+    projectName: "프로젝트2",
+    teamName: "팀2",
+    category: "웹/앱",
+  },
+  {
+    projectId: 3,
+    thumbnail: `${ProjectExampleImg}`,
+    projectName: "프로젝트3",
+    teamName: "팀3",
+    category: "유니티",
+  },
+  {
+    projectId: 4,
+    thumbnail: `${ProjectExampleImg}`,
+    projectName: "프로젝트4",
+    teamName: "팀4",
+    category: "유니티 기초",
+  },
+];
+
 export default function ProjectsPage() {
   const categories = ["유니티", "웹/앱", "유니티 기초"];
   const [activeCat, setActiveCat] = useState("전체");
+  const [filteredData, setFilteredData] = useState(projectDatas);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFilteredData(activeCat === "전체" ? projectDatas : projectDatas.filter((data) => data.category === activeCat));
+  }, [activeCat]);
 
   return (
     <ArchiveWrapper>
@@ -35,12 +79,12 @@ export default function ProjectsPage() {
         ))}
       </FiltersContainer>
       <ProjectsContainer>
-        {[1, 2, 3].map((projectId) => (
+        {filteredData.map(({ projectId, thumbnail, projectName, teamName }) => (
           <Project key={projectId} onClick={() => navigate(`/projects/${projectId}`)}>
-            <img src={ProjectExampleImg} alt="프로젝트 이미지" />
+            <img src={thumbnail} alt="프로젝트 이미지" />
             <div>
-              <p>{projectId}</p>
-              <p>Developer Name</p>
+              <p>{projectName}</p>
+              <p>{teamName}</p>
             </div>
           </Project>
         ))}
