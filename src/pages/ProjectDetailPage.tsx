@@ -1,45 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { ProjectExampleImg } from "../assets/assets";
+import { ProjectExampleImg, downloadIcons } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Profiles from "../components/common/Profiles";
 import VideoFrame from "../components/common/VideoFrame";
 
+interface iDetailData {
+  projectId: number;
+  title: string;
+  youtubeUrl: string;
+  description: string;
+  developers: string[];
+  downloadOptions: Array<
+    | { name: "apk"; url: string; icon: string }
+    | { name: "mac"; url: string; icon: string }
+    | { name: "window"; url: string; icon: string }
+    | { name: "github"; url: string; icon: string }
+  >;
+}
+
+const detailDatas: iDetailData[] = [
+  {
+    projectId: 1,
+    title: "프로젝트1",
+    youtubeUrl: "",
+    description: "프로젝트1 설명",
+    developers: ["a", "b", "c", "d", "e"],
+    downloadOptions: [
+      {
+        name: "github",
+        url: "https://github.com/ilmerry",
+        icon: `${downloadIcons.github}`,
+      },
+    ],
+  },
+];
+
 export default function ProjectDetailPage() {
   const { projectId } = useParams();
+  const [currentProject, setCurrentProject] = useState(
+    detailDatas.filter((data) => data.projectId.toString() === projectId)[0],
+  );
   return (
     <ProjectWrapper>
       <Header margin={4.5}>
-        <h1>{projectId}</h1>
+        <h1>{currentProject.title}</h1>
       </Header>
       <VideoFrame />
-      <DescribeBox>
-        Lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum porttitor dui nec dui rutrum,
-        in commodo sapien rhoncus. Proin non felis et ligula blandit consectetur vitae ac dolor. Donec in metus id leo
-        fringilla interdum vitae eget nibh. Mauris aliquam lacus nec tristique molestie. In ornare lectus non nibh
-        porttitor, in ullamcorper tortor vestibulum. Nullam in magna faucibus, viverra ligula sit amet, laoreet augue.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut at ante consequat, elementum nisl sit amet,
-        vulputate sem. Maecenas laoreet mauris vitae erat ultrices fermentum. Nam in urna ac tortor consequat
-        pellentesque. Pellentesque vulputate metus nec augue varius, non rutrum massa mattis. Duis tincidunt risus et
-        tempor maximus. Phasellus vulputate sapien vitae consectetur cursus. Donec malesuada felis vel cursus posuere.
-        Donec eu nunc maximus erat viverra fermentum sed ut augue. Aliquam ut ante sollicitudin, lacinia lectus tempor,
-        maximus mi.
-      </DescribeBox>
-      <Profiles
-        title="Developers"
-        profileList={["은형", "정현", "예린", "고은", "수연"]}
-        profileSize={22}
-        center={true}>
+      <DescribeBox>{currentProject.description}</DescribeBox>
+      <Profiles title="Developers" profileList={currentProject.developers} profileSize={22} center={true}>
         <DownloadContainer>
           <DownloadTitle>Download</DownloadTitle>
           <Icons>
-            <Icon src={ProjectExampleImg} />
-            <Icon src={ProjectExampleImg} />
-            <Icon src={ProjectExampleImg} />
-            <Icon src={ProjectExampleImg} />
+            {currentProject.downloadOptions.map((option, index) => (
+              <Icon src={option.icon} key={index} />
+            ))}
           </Icons>
         </DownloadContainer>
       </Profiles>
@@ -77,9 +95,7 @@ const DownloadTitle = styled.header`
 `;
 
 const Icons = styled.section`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 0 3rem;
+  display: flex;
   margin-top: 4.5rem;
 `;
 
