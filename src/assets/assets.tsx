@@ -11,3 +11,4 @@ export { default as ApkIcon } from "./downloadIcons/apk-file-format-symbol.png";
 export { default as MacIcon } from "./downloadIcons/mac-os-logo.png";
 export { default as WindowIcon } from "./downloadIcons/windows.png";
 export { default as GithubIcon } from "./downloadIcons/github.png";
+export { default as AirplaneImg } from "./airplane.png";
