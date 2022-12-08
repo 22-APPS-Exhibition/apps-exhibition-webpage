@@ -7,9 +7,7 @@ export { default as TicketImg } from "./ticket.png";
 export { default as AppsLogo } from "./apps.png";
 export { default as BackButtonIcon } from "./back-button.png";
 export { default as ProjectExampleImg } from "./project-example.png";
-export const downloadIcons = {
-  apk: "./downloadIcons/apk-file-format-symbol.png",
-  mac: "./downloadIcons/mac-os-logo.png",
-  window: "./downloadIcons/windows.png",
-  github: "./downloadIcons/github.png",
-};
+export { default as ApkIcon } from "./downloadIcons/apk-file-format-symbol.png";
+export { default as MacIcon } from "./downloadIcons/mac-os-logo.png";
+export { default as WindowIcon } from "./downloadIcons/windows.png";
+export { default as GithubIcon } from "./downloadIcons/github.png";

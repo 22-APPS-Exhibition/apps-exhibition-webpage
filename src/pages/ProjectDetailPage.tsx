@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { ProjectExampleImg, downloadIcons } from "../assets/assets";
+import { ApkIcon, GithubIcon, MacIcon, ProjectExampleImg, WindowIcon } from "../assets/assets";
 import DescribeBox from "../components/common/DescribeBox";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
@@ -22,6 +22,12 @@ interface iDetailData {
   >;
 }
 
+const downloadIcons = {
+  apk: ApkIcon,
+  mac: MacIcon,
+  window: WindowIcon,
+  github: GithubIcon,
+};
 const detailDatas: iDetailData[] = [
   {
     projectId: 1,
@@ -44,6 +50,8 @@ export default function ProjectDetailPage() {
   const [currentProject, setCurrentProject] = useState(
     detailDatas.filter((data) => data.projectId.toString() === projectId)[0],
   );
+  const navigate = useNavigate();
+
   return (
     <ProjectWrapper>
       <Header margin={4.5}>
@@ -56,7 +64,9 @@ export default function ProjectDetailPage() {
           <DownloadTitle>Download</DownloadTitle>
           <Icons>
             {currentProject.downloadOptions.map((option, index) => (
-              <Icon src={option.icon} key={index} />
+              <a key={index} href={option.url}>
+                <Icon src={option.icon} />
+              </a>
             ))}
           </Icons>
         </DownloadContainer>
@@ -102,6 +112,6 @@ const Icons = styled.section`
 const Icon = styled.img`
   width: 20rem;
   height: 20rem;
-  background: #d9d9d9;
   border-radius: 50%;
+  cursor: pointer;
 `;
