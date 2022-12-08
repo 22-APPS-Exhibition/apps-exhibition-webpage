@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage";
 import IntroPage from "./pages/IntroPage";
 import MapPage from "./pages/MapPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path="/intro" element={<IntroPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );
