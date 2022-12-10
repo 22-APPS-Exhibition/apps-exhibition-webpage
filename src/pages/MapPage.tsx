@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { MapImg, InfoImg, TicketImg, RedPinImg, YellowPinImg } from "../assets/assets";
+import Airplane from "../components/common/Airplane";
 import MapModal from "../components/mapPage/MapModal";
 import ModalPortal from "../components/mapPage/ModalPortal";
 
@@ -67,6 +68,7 @@ const pinPositions: iPinProps[] = [
 export default function MapPage() {
   const [modalOpen, setModalOpen] = useState<boolean>();
   const [curPinId, setCurPinId] = useState<number>(0);
+  const mapRef = useRef<HTMLImageElement>(null);
 
   return (
     <MapWrapper>
@@ -81,7 +83,7 @@ export default function MapPage() {
         </ProjectsLink>
       </Header>
       <MapContainer>
-        <img src={MapImg} alt="지도 이미지" />
+        <img src={MapImg} alt="지도 이미지" ref={mapRef} />
         {pinPositions.map((pin, index) => (
           <Pin
             position={pin.position}
@@ -104,6 +106,7 @@ export default function MapPage() {
           <MapModal onClose={() => setModalOpen(false)} projectId={curPinId} />
         </ModalPortal>
       )}
+      <Airplane constraintsRef={mapRef} />
     </MapWrapper>
   );
 }
