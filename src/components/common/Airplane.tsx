@@ -4,20 +4,33 @@ import styled from "styled-components";
 import { AirplaneImg } from "../../assets/assets";
 
 interface iAirplaneProps {
-  constraintsRef: RefObject<HTMLImageElement>;
+  constraintsRef?: RefObject<HTMLImageElement>;
 }
 
 export default function Airplane({ constraintsRef }: iAirplaneProps) {
-  const [isSpeech, setIsSpeech] = useState(true);
+  const [isSpeech, setIsSpeech] = useState(constraintsRef ? true : false);
 
-  return (
-    <AirplaneContainer drag dragElastic={0.1} dragConstraints={constraintsRef}>
-      {isSpeech && <Speech>Drag Me!</Speech>}
-      <StAirplane onClick={() => setIsSpeech(false)}>
-        <img draggable={false} src={AirplaneImg} alt="비행기 이미지" />
-      </StAirplane>
-    </AirplaneContainer>
-  );
+  if (constraintsRef) {
+    // 드래그 가능한 비행기
+    return (
+      <AirplaneContainer drag dragConstraints={constraintsRef}>
+        {isSpeech && <Speech>Drag Me!</Speech>}
+        <StAirplane onClick={() => setIsSpeech(false)}>
+          <img draggable={false} src={AirplaneImg} alt="비행기 이미지" />
+        </StAirplane>
+      </AirplaneContainer>
+    );
+  } else {
+    // 드래그 불가능한 비행기
+    return (
+      <AirplaneContainer>
+        {isSpeech && <Speech>Drag Me!</Speech>}
+        <StAirplane>
+          <img draggable={false} src={AirplaneImg} alt="비행기 이미지" />
+        </StAirplane>
+      </AirplaneContainer>
+    );
+  }
 }
 
 const AirplaneContainer = styled(motion.aside)`

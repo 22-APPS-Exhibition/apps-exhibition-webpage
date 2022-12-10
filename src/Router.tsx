@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
 import IntroPage from "./pages/IntroPage";
+import LoadingPage from "./pages/LoadingPage";
 import MapPage from "./pages/MapPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -12,6 +13,7 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<TicketPage />} />
+        <Route path="/loading" element={<LoadingPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/intro" element={<IntroPage />} />
         <Route path="/projects" element={<ProjectsPage />} />

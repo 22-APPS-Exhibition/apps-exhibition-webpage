@@ -100,13 +100,13 @@ export default function MapPage() {
             <img src={YellowPinImg} alt="지도 표시" />
           </a>
         </Pin>
+        <Airplane constraintsRef={mapRef} />
       </MapContainer>
       {modalOpen && (
         <ModalPortal closePortal={() => setModalOpen(false)}>
           <MapModal onClose={() => setModalOpen(false)} projectId={curPinId} />
         </ModalPortal>
       )}
-      <Airplane constraintsRef={mapRef} />
     </MapWrapper>
   );
 }
