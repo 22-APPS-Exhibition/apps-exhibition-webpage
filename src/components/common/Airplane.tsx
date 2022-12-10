@@ -23,12 +23,9 @@ export default function Airplane({ constraintsRef }: iAirplaneProps) {
   } else {
     // 드래그 불가능한 비행기
     return (
-      <AirplaneContainer>
-        {isSpeech && <Speech>Drag Me!</Speech>}
-        <StAirplane>
-          <img draggable={false} src={AirplaneImg} alt="비행기 이미지" />
-        </StAirplane>
-      </AirplaneContainer>
+      <StAirplane>
+        <img draggable={false} src={AirplaneImg} alt="비행기 이미지" />
+      </StAirplane>
     );
   }
 }
