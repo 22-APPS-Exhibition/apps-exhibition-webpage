@@ -23,28 +23,35 @@ const GlobalStyle = createGlobalStyle`
     //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
     //태블릿
     html {
-      font-size: 40%;
+      font-size: 7px;
     }
   }
   @media all and (max-width: 1024px) {
     //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
     //태블릿
     html {
-      font-size: 30%;
+      font-size: 5px;
     }
   }
   @media all and (max-width: 768px) {
     //브라우저 창 width가 768px보다 작아지는 순간부터 적용
     //모바일
     html {
-      font-size: 20%;
+      font-size: 4px;
     }
   }
   @media all and (max-width: 425px) {
     //브라우저 창 width가 768px보다 작아지는 순간부터 적용
     //모바일
     html {
-      font-size: 10%;
+      font-size: 2px;
+    }
+  }
+  @media all and (max-width: 320px) {
+    //브라우저 창 width가 768px보다 작아지는 순간부터 적용
+    //모바일
+    html {
+      font-size: 1px;
     }
   }
 `;

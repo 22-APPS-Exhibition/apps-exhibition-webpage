@@ -12,7 +12,7 @@ export default function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<TicketPage />} />
+        <Route path="/apps-exhibition-webpage" element={<TicketPage />} />
         <Route path="/loading" element={<LoadingPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/intro" element={<IntroPage />} />

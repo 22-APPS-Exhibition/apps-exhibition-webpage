@@ -13,6 +13,7 @@
     "@types/styled-components": "^5.1.26",
     "axios": "^1.1.3",
     "framer-motion": "^7.6.19",
+    "gh-pages": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
@@ -26,7 +27,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
+    "predeploy": "npm run build"
   },
   "eslintConfig": {
     "extends": [
@@ -59,5 +62,6 @@
     "eslint-plugin-simple-import-sort": "^8.0.0",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
-  }
+  },
+  "homepage": "https://22-apps-exhibition.github.io/apps-exhibition-webpage"
 }
