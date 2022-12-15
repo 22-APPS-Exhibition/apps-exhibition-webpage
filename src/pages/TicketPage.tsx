@@ -20,12 +20,12 @@ const TicketWrapper = styled.section`
 
   height: 100vh;
   max-width: 100%;
-  @media screen and (min-width: 700px) {
+  /* @media screen and (min-width: 700px) {
     max-width: 60%;
   }
   @media screen and (min-width: 1024px) {
     max-width: 30%;
-  }
+  } */
 `;
 
 const TicketContainer = styled.section`
