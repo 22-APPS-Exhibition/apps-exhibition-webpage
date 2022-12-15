@@ -80,7 +80,7 @@ export default function ProjectsPage() {
       </FiltersContainer>
       <ProjectsContainer>
         {filteredData.map(({ projectId, thumbnail, projectName, teamName }) => (
-          <Project key={projectId} onClick={() => navigate(`/apps-exhibition-webpage/projects/${projectId}`)}>
+          <Project key={projectId} onClick={() => navigate(`/projects/${projectId}`)}>
             <img src={thumbnail} alt="프로젝트 이미지" />
             <div>
               <p>{projectName}</p>

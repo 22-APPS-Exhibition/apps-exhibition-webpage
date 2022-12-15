@@ -16,7 +16,7 @@ export default function MapModal({ onClose, projectId }: iMapProps) {
       <ModalContent>
         <ModalContentHeader>
           <h1>Lorem</h1>
-          <button onClick={() => navigate(`/apps-exhibition-webpage/projects/${projectId}`)}>
+          <button onClick={() => navigate(`/projects/${projectId}`)}>
             <img src={BackButtonIcon} alt="뒤로가기 버튼" />
           </button>
         </ModalContentHeader>
