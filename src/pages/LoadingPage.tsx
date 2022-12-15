@@ -25,7 +25,7 @@ export default function LoadingPage() {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate("/map");
+      navigate("/apps-exhibition-webpage/map");
     }, 5000);
   }, []);
 

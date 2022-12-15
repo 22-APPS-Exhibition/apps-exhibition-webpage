@@ -9,7 +9,7 @@ export default function TicketLeft() {
   const onClickGoBtn = () => {
     if (name) {
       localStorage.setItem("username", name);
-      navigate("/loading");
+      navigate("/apps-exhibition-webpage/loading");
     } else {
       alert("이름을 입력해주세요");
     }

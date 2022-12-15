@@ -13,11 +13,11 @@ export default function Router() {
     <BrowserRouter>
       <Routes>
         <Route path="/apps-exhibition-webpage" element={<TicketPage />} />
-        <Route path="/loading" element={<LoadingPage />} />
-        <Route path="/map" element={<MapPage />} />
-        <Route path="/intro" element={<IntroPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+        <Route path="/apps-exhibition-webpage/loading" element={<LoadingPage />} />
+        <Route path="/apps-exhibition-webpage/map" element={<MapPage />} />
+        <Route path="/apps-exhibition-webpage/intro" element={<IntroPage />} />
+        <Route path="/apps-exhibition-webpage/projects" element={<ProjectsPage />} />
+        <Route path="/apps-exhibition-webpage/projects/:projectId" element={<ProjectDetailPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>

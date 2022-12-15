@@ -13,7 +13,7 @@ const Header = ({ children, margin }: iHeaderProps) => {
   return (
     <StHeader marginTop={margin ?? 0}>
       {children}
-      <StBackButton onClick={() => navigate("/map")}>
+      <StBackButton onClick={() => navigate("/apps-exhibition-webpage/map")}>
         <img src={BackButtonIcon} alt="뒤로가기 버튼" />
       </StBackButton>
     </StHeader>
