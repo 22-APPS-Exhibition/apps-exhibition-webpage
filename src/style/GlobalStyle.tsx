@@ -19,39 +19,39 @@ const GlobalStyle = createGlobalStyle`
         /* 1rem = 10px */
         font-size: 62.5%;
     }
-  @media all and (max-width: 1450px) {
+  @media all and (max-width: 1440px) {
     //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
     //태블릿
     html {
-      font-size: 7px;
+      font-size: 6px;
     }
   }
   @media all and (max-width: 1024px) {
     //브라우저 창 width가 1024px보다 작아지는 순간부터 적용
     //태블릿
     html {
-      font-size: 5px;
+      font-size: 4.3px;
     }
   }
   @media all and (max-width: 768px) {
     //브라우저 창 width가 768px보다 작아지는 순간부터 적용
     //모바일
     html {
-      font-size: 4px;
+      font-size: 3.2px;
     }
   }
   @media all and (max-width: 425px) {
     //브라우저 창 width가 768px보다 작아지는 순간부터 적용
     //모바일
     html {
-      font-size: 2px;
+      font-size: 1.8px;
     }
   }
   @media all and (max-width: 320px) {
     //브라우저 창 width가 768px보다 작아지는 순간부터 적용
     //모바일
     html {
-      font-size: 1px;
+      font-size: 1.3px;
     }
   }
 `;
