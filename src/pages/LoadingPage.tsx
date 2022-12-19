@@ -5,6 +5,19 @@ import styled from "styled-components";
 import Airplane from "../components/common/Airplane";
 
 export default function LoadingPage() {
+  const planeVariants: Variants = {
+    from: {
+      y: 10,
+    },
+    to: {
+      y: -10,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    },
+  };
   const dotVariants: Variants = {
     hidden: {
       opacity: 0.5,
@@ -26,12 +39,14 @@ export default function LoadingPage() {
   useEffect(() => {
     setTimeout(() => {
       navigate("/map");
-    }, 5000);
+    }, 4000);
   }, []);
 
   return (
     <LoadingWrapper>
-      <Airplane />
+      <PlaneContainer variants={planeVariants} initial="from" animate="to">
+        <Airplane />
+      </PlaneContainer>
       {"Loading".split("").map((dot, i) => (
         <LoadingMsg key={i} initial="hidden" animate="visible" variants={dotVariants} custom={i}>
           {dot}
@@ -51,6 +66,8 @@ const LoadingWrapper = styled(motion.section)`
 
   padding: 0 16rem;
 `;
+
+const PlaneContainer = styled(motion.article)``;
 
 const LoadingMsg = styled(motion.h1)`
   font-size: 10rem;
