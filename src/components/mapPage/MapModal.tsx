@@ -1,3 +1,4 @@
+import { motion, Variants } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
@@ -10,10 +11,24 @@ interface iMapProps {
 
 export default function MapModal({ onClose, projectId }: iMapProps) {
   const navigate = useNavigate();
+  const modalVariants: Variants = {
+    from: {
+      opacity: 0,
+      y: 50,
+    },
+    to: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.25,
+      },
+    },
+  };
+
   return (
     <Modal>
       <ModalBackground role="presentation" onClick={onClose} />
-      <ModalContent>
+      <ModalContent initial="from" animate="to" variants={modalVariants}>
         <ModalContentHeader>
           <h1>Lorem</h1>
           <button onClick={() => navigate(`/projects/${projectId}`)}>
@@ -31,15 +46,16 @@ const Modal = styled.section`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 11;
+  z-index: 30;
   width: 100%;
   height: 100%;
 `;
 
-const ModalContent = styled.article`
+const ModalContent = styled(motion.article)`
   display: flex;
   align-items: center;
   flex-direction: column;
