@@ -1,48 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { AppsLogo, ProjectExampleImg } from "../assets/assets";
+import { AppsLogo } from "../assets/assets";
 import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
-
-interface iProjectsDatas {
-  projectId: number;
-  thumbnail: string;
-  projectName: string;
-  teamName: string;
-  category: "유니티" | "웹/앱" | "유니티 기초";
-}
-
-const projectDatas: iProjectsDatas[] = [
-  {
-    projectId: 1,
-    thumbnail: `${ProjectExampleImg}`,
-    projectName: "프로젝트1",
-    teamName: "팀1",
-    category: "유니티",
-  },
-  {
-    projectId: 2,
-    thumbnail: `${ProjectExampleImg}`,
-    projectName: "프로젝트2",
-    teamName: "팀2",
-    category: "웹/앱",
-  },
-  {
-    projectId: 3,
-    thumbnail: `${ProjectExampleImg}`,
-    projectName: "프로젝트3",
-    teamName: "팀3",
-    category: "유니티",
-  },
-  {
-    projectId: 4,
-    thumbnail: `${ProjectExampleImg}`,
-    projectName: "프로젝트4",
-    teamName: "팀4",
-    category: "유니티 기초",
-  },
-];
+import { projectDatas } from "../util/data";
 
 export default function ProjectsPage() {
   const categories = ["유니티", "웹/앱", "유니티 기초"];
@@ -159,6 +121,7 @@ const Project = styled.article`
   > img {
     width: 100%;
     height: 40rem;
+    border-radius: 3rem;
   }
 
   > div {

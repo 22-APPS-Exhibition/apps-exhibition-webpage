@@ -1,4 +1,45 @@
-import { GithubIcon, ProjectExampleImg, WindowIcon } from "../assets/assets";
+import {
+  GithubIcon,
+  WindowIcon,
+  도전집냥이,
+  에브리로그,
+  청파마켓,
+  돌리,
+  okCheck,
+  plantity,
+  농디치,
+  달로토끼다,
+  스노우카페,
+  천사와악마,
+  햄스터의꿈,
+  TillYouLookAround,
+  강단이,
+  고예린,
+  김다연,
+  김수현,
+  김진영,
+  문채일,
+  박진희,
+  박해지,
+  신진영,
+  오지수,
+  유정현,
+  윤서희,
+  이가을,
+  장나리,
+  전유정,
+  정민영,
+  정민주,
+  정제인,
+  정채영,
+  조수진,
+  조영서,
+  최민선,
+  최은형,
+  하고은,
+  홍희수,
+  황수연,
+} from "../assets/assets";
 
 interface iProjectData {
   projectId: number;
@@ -20,13 +61,13 @@ interface iProjectData {
   >;
 }
 
-export const projectData: iProjectData[] = [
+export const projectDatas: iProjectData[] = [
   {
     projectId: 1,
     projectName: "도전!집냥이(Epic Cat Voyage)",
     teamName: "츄르",
     category: "유니티",
-    thumbnail: "../assets/thumbnails/도전 집냥이_가로 이미지.png",
+    thumbnail: `${도전집냥이}`,
     youtubeUrl: "",
     description: `
     😺 제작기간
@@ -45,19 +86,19 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "오지수",
-        image: "../assets/developers/오지수.png",
+        image: `${오지수}`,
       },
       {
         name: "정민영",
-        image: "../assets/developers/정민영.png",
+        image: `${정민영}`,
       },
       {
         name: "정민주",
-        image: "../assets/developers/정민주.png",
+        image: `${정민주}`,
       },
       {
         name: "최민선",
-        image: "../assets/developers/최민선.png",
+        image: `${최민선}`,
       },
     ],
     downloadOptions: [
@@ -73,25 +114,25 @@ export const projectData: iProjectData[] = [
     projectName: "에브리로그",
     teamName: "팀이름",
     category: "웹/앱",
-    thumbnail: "../assets/thumbnails/에브리로그_가로.png",
+    thumbnail: `${에브리로그}`,
     youtubeUrl: "",
     description: "",
     developers: [
       {
         name: "김진영",
-        image: "../assets/developers/김진영.png",
+        image: `${김진영}`,
       },
       {
         name: "윤서희",
-        image: "../assets/developers/윤서희.png",
+        image: `${윤서희}`,
       },
       {
         name: "정민영",
-        image: "../assets/developers/정민영.png",
+        image: `${정민영}`,
       },
       {
         name: "조수진",
-        image: "../assets/developers/조수진.png",
+        image: `${조수진}`,
       },
     ],
     downloadOptions: [
@@ -107,33 +148,33 @@ export const projectData: iProjectData[] = [
     projectName: "청파마켓",
     teamName: "청파마켓",
     category: "웹/앱",
-    thumbnail: "../assets/thumbnails/청파마켓_가로.png",
+    thumbnail: `${청파마켓}`,
     youtubeUrl: "",
     description: "",
     developers: [
       {
         name: "김진영",
-        image: "../assets/developers/김진영.png",
+        image: `${김진영}`,
       },
       {
         name: "박해지",
-        image: "../assets/developers/박해지.png",
+        image: `${박해지}`,
       },
       {
         name: "신진영",
-        image: "../assets/developers/신진영.png",
+        image: `${신진영}`,
       },
       {
         name: "이가을",
-        image: "../assets/developers/이가을.png",
+        image: `${이가을}`,
       },
       {
         name: "전유정",
-        image: "../assets/developers/전유정.png",
+        image: `${전유정}`,
       },
       {
         name: "정채영",
-        image: "../assets/developers/정채영.png",
+        image: `${정채영}`,
       },
     ],
     downloadOptions: [
@@ -149,7 +190,7 @@ export const projectData: iProjectData[] = [
     projectName: "Common Alley Dolly's",
     teamName: "Doll’I",
     category: "유니티",
-    thumbnail: "../assets/thumbnails/돌리가로이미지.png",
+    thumbnail: `${돌리}`,
     youtubeUrl: "",
     description: `제작기간: 3개월(방학7월-8월:기획 및 이미지 제작, 12월 후반 프로토타입 제작)
 
@@ -160,19 +201,19 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "강단이",
-        image: "../assets/developers/강단이.png",
+        image: `${강단이}`,
       },
       {
         name: "김수현",
-        image: "../assets/developers/김수현.png",
+        image: `${김수현}`,
       },
       {
         name: "박진희",
-        image: "../assets/developers/박진희.png",
+        image: `${박진희}`,
       },
       {
         name: "이가을",
-        image: "../assets/developers/이가을.png",
+        image: `${이가을}`,
       },
     ],
     downloadOptions: [
@@ -188,7 +229,7 @@ export const projectData: iProjectData[] = [
     projectName: "OK Check Project",
     teamName: "내부자송",
     category: "유니티",
-    thumbnail: "../assets/thumbnails/okcheck.PNG",
+    thumbnail: `${okCheck}`,
     youtubeUrl: "",
     description: `제작 기간: 22년 9월 ~ 12월 약 3달
     기획 의도: 
@@ -201,19 +242,19 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "강단이",
-        image: "../assets/developers/강단이.png",
+        image: `${강단이}`,
       },
       {
         name: "고예린",
-        image: "../assets/developers/고예린.png",
+        image: `${고예린}`,
       },
       {
         name: "전유정",
-        image: "../assets/developers/전유정.png",
+        image: `${전유정}`,
       },
       {
         name: "조영서",
-        image: "../assets/developers/조영서.png",
+        image: `${조영서}`,
       },
     ],
     downloadOptions: [
@@ -229,7 +270,7 @@ export const projectData: iProjectData[] = [
     projectName: "Plantity",
     teamName: "plantity",
     category: "웹/앱",
-    thumbnail: "../assets/thumbnails/Plantity.png",
+    thumbnail: `${plantity}`,
     youtubeUrl: "",
     description: `개발 배경 및 목적
     현대사회에서 거주 및 근무 환경, 인간관계 등의 이유로 정신적 피로가 증가하고 있다. 또한 코로나 시국을 겪으면서 타인과의 어울림이 차단되었고 관계 유지도 어려워졌다. 그 결과 정서적인 안정감을 주는 반려식물에 대한 관심도가 상승했다. 하지만 반려동물에 비해 반려식물은 생육 정보를 알고 키우기가 어렵다. 이에 따라 초보자도 쉽게 식물 키우기에 동참하도록 만들어 반려식물 문화 형성을 도모하는 앱을 개발하게 되었다. Plantity는 Plant와 Identity의 합성어로, 사용자와 식물이 함께 성장하는 것을 추구한다.
@@ -261,35 +302,35 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "김다연",
-        image: "../assets/developers/김다연.png",
+        image: `${김다연}`,
       },
       {
         name: "고예린",
-        image: "../assets/developers/고예린.png",
+        image: `${고예린}`,
       },
       {
         name: "유정현",
-        image: "../assets/developers/유정현.png",
+        image: `${유정현}`,
       },
       {
         name: "장나리",
-        image: "../assets/developers/장나리.png",
+        image: `${장나리}`,
       },
       {
         name: "정제인",
-        image: "../assets/developers/정제인.png",
+        image: `${정제인}`,
       },
       {
         name: "최은형",
-        image: "../assets/developers/최은형.png",
+        image: `${최은형}`,
       },
       {
         name: "황수연",
-        image: "../assets/developers/황수연.png",
+        image: `${황수연}`,
       },
       {
         name: "홍희수",
-        image: "../assets/developers/홍희수.png",
+        image: `${홍희수}`,
       },
     ],
     downloadOptions: [
@@ -305,7 +346,7 @@ export const projectData: iProjectData[] = [
     projectName: "햄스터의 꿈",
     teamName: "김수현",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/햄스터의꿈.png",
+    thumbnail: `${햄스터의꿈}`,
     youtubeUrl: "",
     description: `- 게임 시나리오
     날다람쥐의 비행을 보고 하늘을 날고 싶다는 꿈이 생긴 햄스터, 꿈을 이루기 위해 모험을 떠납니다. 햄스터가 꿈에 가까워질 수 있도록 도와주세요!
@@ -319,7 +360,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "김수현",
-        image: "../assets/developers/김수현.png",
+        image: `${김수현}`,
       },
     ],
     downloadOptions: [
@@ -335,7 +376,7 @@ export const projectData: iProjectData[] = [
     projectName: "달로토끼다",
     teamName: "문채일",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/달로토끼다.png",
+    thumbnail: `${달로토끼다}`,
     youtubeUrl: "",
     description: `‘달로토끼다’는 미니게임이 3개가 포함된 스토리 형식 게임입니다.
     달에서 온 ‘흰 토끼’가 되어, 분수대에서 사람들의 소원이 담긴 동전들을 모으는 미니게임이 하나, 사람들의 소원에 담긴 이야기를 본 후 사람들에게 전달하는 떡을 만들어 전달하는 미니게임이 하나씩 있습니다. 현재 완성된 부분은 초반부입니다.
@@ -352,7 +393,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "문채일",
-        image: "../assets/developers/문채일.png",
+        image: `${문채일}`,
       },
     ],
     downloadOptions: [
@@ -368,7 +409,7 @@ export const projectData: iProjectData[] = [
     projectName: "농디치",
     teamName: "오지수",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/농디치.png",
+    thumbnail: `${농디치}`,
     youtubeUrl: "",
     description: `🌾 제작자: 오지수
     🌾 제작 기간: 2022.2.31 ~ 2022.12.21
@@ -388,7 +429,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "오지수",
-        image: "../assets/developers/오지수.png",
+        image: `${오지수}`,
       },
     ],
     downloadOptions: [
@@ -409,13 +450,13 @@ export const projectData: iProjectData[] = [
     projectName: "윤서희",
     teamName: "윤서희",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/농디치.png",
+    thumbnail: `${농디치}`,
     youtubeUrl: "",
     description: "",
     developers: [
       {
         name: "윤서희",
-        image: "../assets/developers/윤서희.png",
+        image: `${윤서희}`,
       },
     ],
     downloadOptions: [],
@@ -425,7 +466,7 @@ export const projectData: iProjectData[] = [
     projectName: "Till You Look Around",
     teamName: "정민주",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/TillYouLookAround.png",
+    thumbnail: `${TillYouLookAround}`,
     youtubeUrl: "",
     description: `장마철이 길어져 별똥별이 마구마구 내리는 달나라의 여름 밤. 방에서 벌떡 깨니 내가 누구인지도 모르겠고 무엇을 해야할지 모르겠는 난감한 상황에 의지할 것은 설명서 하나 뿐이다. 내용이 뭔가 심상찮지만 있는 것이 요것 뿐이니 따를 수 밖에. 대충 배달을 나가라는 소리인 것 같으니 오리씨는 설명서를 따라 홀린듯 배달하러 나간다. 기록적인 유성우와 험난한 달 지형을 무릅쓰고 배달 나가는 Mr. 오리씨! 달나라 우주 배달부 오리씨가 무사히 배달 갈 수 있게 도와주세요.
 
@@ -436,7 +477,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "정민주",
-        image: "../assets/developers/정민주.png",
+        image: `${정민주}`,
       },
     ],
     downloadOptions: [],
@@ -446,7 +487,7 @@ export const projectData: iProjectData[] = [
     projectName: "천사와 악마 이야기",
     teamName: "최민선",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/천사와악마.png",
+    thumbnail: `${천사와악마}`,
     youtubeUrl: "",
     description: `개발자: 최민선
  
@@ -465,7 +506,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "최민선",
-        image: "../assets/developers/최민선.png",
+        image: `${최민선}`,
       },
     ],
     downloadOptions: [
@@ -481,7 +522,7 @@ export const projectData: iProjectData[] = [
     projectName: "SnowCafe",
     teamName: "하고은",
     category: "유니티 기초",
-    thumbnail: "../assets/thumbnails/스노우카페.png",
+    thumbnail: `${스노우카페}`,
     youtubeUrl: "",
     description: `
     ⭐ 게임 시나리오 
@@ -499,7 +540,7 @@ export const projectData: iProjectData[] = [
     developers: [
       {
         name: "하고은",
-        image: "../assets/developers/하고은.png",
+        image: `${하고은}`,
       },
     ],
     downloadOptions: [
