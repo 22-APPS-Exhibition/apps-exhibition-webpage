@@ -126,6 +126,12 @@ const Header = styled.header`
   width: 100%;
   padding: 4rem 6.4rem;
   z-index: 10;
+  a {
+    font-size: 4.5rem;
+    line-height: 4.1rem;
+    letter-spacing: 0.1em;
+    color: white;
+  }
 `;
 
 const InfoLink = styled.a`
@@ -135,7 +141,7 @@ const InfoLink = styled.a`
   text-decoration: none;
   color: white;
   > img {
-    height: 2.4rem;
+    height: 3.5rem;
     margin-right: 2rem;
   }
 `;

@@ -9,7 +9,7 @@ const StDescribeBox = styled.article`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 30rem 6.7rem;
+  padding: 20rem 6.7rem;
   background: #91adff;
   border: 3rem solid #ccd5ff;
   border-radius: 5rem;
@@ -18,7 +18,7 @@ const StDescribeBox = styled.article`
   p {
     font-weight: 400;
     font-size: 4rem;
-    line-height: 4.4rem;
+    line-height: 6rem;
     letter-spacing: 0.1em;
   }
 `;
