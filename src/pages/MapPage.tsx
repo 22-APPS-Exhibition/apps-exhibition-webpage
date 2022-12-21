@@ -59,10 +59,6 @@ const pinPositions: iPinProps[] = [
     pinId: 12,
     position: { x: 70, y: -43 },
   },
-  {
-    pinId: 13,
-    position: { x: 68, y: 30 },
-  },
 ];
 
 export default function MapPage() {
@@ -95,7 +91,7 @@ export default function MapPage() {
             <img src={RedPinImg} alt="지도 표시" />
           </Pin>
         ))}
-        <Pin position={{ x: 84, y: 28 }}>
+        <Pin position={{ x: 80, y: 28 }}>
           <a href="https://sookmyung-apps.github.io">
             <img src={YellowPinImg} alt="지도 표시" />
           </a>

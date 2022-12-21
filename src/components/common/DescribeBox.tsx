@@ -15,6 +15,10 @@ const StDescribeBox = styled.article`
   border-radius: 5rem;
   color: black;
   width: 160rem;
+  line-height: 20px; // 이서영이 건드린거
+  letter-spacing: 0.1em;
+  white-space: pre-wrap;
+
   p {
     font-weight: 400;
     font-size: 4rem;

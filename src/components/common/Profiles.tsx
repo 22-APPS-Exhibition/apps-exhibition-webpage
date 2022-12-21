@@ -5,7 +5,10 @@ import { ProjectExampleImg } from "../../assets/assets";
 interface iProfilesProps {
   children?: JSX.Element | JSX.Element[];
   title: string;
-  profileList: string[];
+  profileList: Array<{
+    name: string;
+    image: string;
+  }>;
   profileSize: number;
   center: boolean;
 }
@@ -14,10 +17,10 @@ export default function Profiles({ children, title, profileList, profileSize, ce
   return (
     <StProfilesContainer center={center}>
       <StHeader>{title}</StHeader>
-      <StProfiles>
-        {profileList.map((name, index) => (
+      <StProfiles cnt={profileList.length}>
+        {profileList.map(({ name, image }, index) => (
           <StProfile key={index} size={profileSize}>
-            <img src={ProjectExampleImg} alt="프로필 이미지" />
+            <img src={image} alt="프로필 이미지" />
             <p>{name}</p>
           </StProfile>
         ))}
@@ -43,9 +46,10 @@ const StProfilesContainer = styled.section<{ center: boolean }>`
   background: white;
   border-radius: 5rem;
 `;
-const StProfiles = styled.section`
+const StProfiles = styled.section<{ cnt: number }>`
+  // 이서영이 건드린거
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: ${({ cnt }) => `repeat(${cnt > 8 ? 5 : cnt === 8 ? 4 : cnt === 6 ? 6 : cnt}, 1fr);`};
   grid-gap: 13rem 3rem;
 
   margin-top: 13rem;
@@ -65,8 +69,8 @@ const StProfile = styled.article<{ size: number }>`
   > img {
     width: ${({ size }) => size}rem;
     height: ${({ size }) => size}rem;
-    background: #d9d9d9;
     border-radius: 50%;
+    object-fit: contain;
   }
   > p {
     font-weight: 400;

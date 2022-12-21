@@ -7,57 +7,21 @@ import Footer from "../components/common/Footer";
 import Header from "../components/common/Header";
 import Profiles from "../components/common/Profiles";
 import VideoFrame from "../components/common/VideoFrame";
-
-interface iDetailData {
-  projectId: number;
-  title: string;
-  youtubeUrl: string;
-  description: string;
-  developers: string[];
-  downloadOptions: Array<
-    | { name: "apk"; url: string; icon: string }
-    | { name: "mac"; url: string; icon: string }
-    | { name: "window"; url: string; icon: string }
-    | { name: "github"; url: string; icon: string }
-  >;
-}
-
-const downloadIcons = {
-  apk: ApkIcon,
-  mac: MacIcon,
-  window: WindowIcon,
-  github: GithubIcon,
-};
-const detailDatas: iDetailData[] = [
-  {
-    projectId: 1,
-    title: "프로젝트1",
-    youtubeUrl: "",
-    description: "프로젝트1 설명",
-    developers: ["a", "b", "c", "d", "e"],
-    downloadOptions: [
-      {
-        name: "github",
-        url: "https://github.com/ilmerry",
-        icon: `${downloadIcons.github}`,
-      },
-    ],
-  },
-];
+import { projectDatas } from "../util/data";
 
 export default function ProjectDetailPage() {
   const { projectId } = useParams();
-  const [currentProject, setCurrentProject] = useState(
-    detailDatas.filter((data) => data.projectId.toString() === projectId)[0],
-  );
+  const [currentProject, setCurrentProject] = useState(projectDatas[parseInt(projectId!) - 1]);
 
   return (
     <ProjectWrapper>
       <Header margin={4.5}>
-        <h1>{currentProject.title}</h1>
+        <h1>{currentProject.projectName}</h1>
       </Header>
-      <VideoFrame />
-      <DescribeBox>{currentProject.description}</DescribeBox>
+      <VideoFrame url={currentProject.youtubeUrl} />
+      <DescribeBox>
+        <p>{currentProject.description}</p>
+      </DescribeBox>
       <Profiles title="Developers" profileList={currentProject.developers} profileSize={22} center={true}>
         <DownloadContainer>
           <DownloadTitle>Download</DownloadTitle>
@@ -106,11 +70,14 @@ const DownloadTitle = styled.header`
 const Icons = styled.section`
   display: flex;
   margin-top: 4.5rem;
+  a: nth-child(2) {
+    margin-left: 3rem;
+  }
 `;
 
 const Icon = styled.img`
   width: 20rem;
   height: 20rem;
-  border-radius: 50%;
   cursor: pointer;
+  object-fit: contain;
 `;

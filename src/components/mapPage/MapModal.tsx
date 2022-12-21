@@ -3,6 +3,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { BackButtonIcon } from "../../assets/assets";
+import { projectDatas } from "../../util/data";
 
 interface iMapProps {
   onClose: () => void;
@@ -24,19 +25,20 @@ export default function MapModal({ onClose, projectId }: iMapProps) {
       },
     },
   };
+  const prj = projectDatas[projectId - 1];
 
   return (
     <Modal>
       <ModalBackground role="presentation" onClick={onClose} />
       <ModalContent initial="from" animate="to" variants={modalVariants}>
         <ModalContentHeader>
-          <h1>Lorem</h1>
+          <h1>{prj.projectName}</h1>
           <button onClick={() => navigate(`/projects/${projectId}`)}>
             <img src={BackButtonIcon} alt="뒤로가기 버튼" />
           </button>
         </ModalContentHeader>
-        <ModalVideo />
-        <ModalFooter>Vestibulum porttitor dui nec dui</ModalFooter>
+        <ModalVideo src={prj.thumbnail} />
+        <ModalFooter>made by team {prj.teamName}</ModalFooter>
       </ModalContent>
     </Modal>
   );
@@ -90,11 +92,9 @@ const ModalContentHeader = styled.header`
   }
 `;
 
-const ModalVideo = styled.iframe`
+const ModalVideo = styled.img`
   margin-top: 3.2rem;
-  width: 100%;
-
-  background: white;
+  width: 100rem;
   border-radius: 2rem;
 `;
 
@@ -102,9 +102,8 @@ const ModalFooter = styled.footer`
   display: flex;
   justify-content: left;
   width: 100%;
-  margin-top: 3rem;
+  margin: 3rem 5rem;
   margin-bottom: 7.8rem;
-  margin-left: 5rem;
   font-family: "Archivo";
   font-weight: 400;
   font-size: 2.4rem;

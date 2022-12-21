@@ -137,13 +137,15 @@ const Project = styled.article`
     border: 1rem solid #ccd5ff;
     border-radius: 2rem;
 
-    > p {
+    p {
       font-weight: 400;
       font-size: 3.6rem;
-      display: flex;
       margin-left: 5rem;
 
       color: black;
+    }
+    > p:first-child {
+      font-weight: 700;
     }
   }
 `;
