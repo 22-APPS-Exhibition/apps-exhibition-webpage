@@ -1,9 +1,8 @@
-import { ReactNode } from "react";
 import styled from "styled-components";
 const Footer = () => {
   return (
     <StFooter>
-      <p>Copyright ⓒ APPS Since 2021 All Rights Reserved.</p>
+      <p>Copyright ⓒ APPS Since 2022 All Rights Reserved.</p>
       <p>Department APPS of SMWU</p>
     </StFooter>
   );
