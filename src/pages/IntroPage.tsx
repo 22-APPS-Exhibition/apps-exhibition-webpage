@@ -68,7 +68,7 @@ export default function IntroPage() {
       <Header margin={4.5}>
         <h1>Welcome {name}!</h1>
       </Header>
-      <VideoFrame url=".." />
+      <VideoFrame url="https://www.youtube-nocookie.com/embed/f1en_P1OoUY" />
       <DescribeBox>
         <p>
           APPS는 숙명여자대학교 게임, 앱, 웹 기획과 개발을 하는 동아리입니다. 소프트웨어 서비스 환경에서 필요한
