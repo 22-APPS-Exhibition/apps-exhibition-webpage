@@ -84,7 +84,7 @@ const FiltersContainer = styled.section`
 `;
 
 const FilterButton = styled.button<{ isActive: boolean }>`
-  width: 25rem;
+  width: 30rem;
   height: 10rem;
   background: ${({ isActive }) => (isActive ? "#04D7A2" : "#c2c2c2")};
   border-radius: 3rem;

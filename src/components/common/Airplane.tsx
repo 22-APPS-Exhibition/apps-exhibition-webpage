@@ -41,7 +41,7 @@ const AirplaneContainer = styled(motion.aside)`
 `;
 
 const Speech = styled.div`
-  font-size: 2rem;
+  font-size: 4rem;
 `;
 
 const StAirplane = styled(motion.div)`

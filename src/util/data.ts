@@ -68,7 +68,7 @@ export const projectDatas: iProjectData[] = [
     teamName: "츄르",
     category: "유니티",
     thumbnail: `${도전집냥이}`,
-    youtubeUrl: "",
+    youtubeUrl: "https://www.youtube-nocookie.com/embed/O2GNW9rqRuI",
     description: `
 😺 제작기간
 2022.3.31 ~ 2022.12.21
@@ -264,7 +264,7 @@ export const projectDatas: iProjectData[] = [
     teamName: "내부자송",
     category: "유니티",
     thumbnail: `${okCheck}`,
-    youtubeUrl: "",
+    youtubeUrl: "https://www.youtube-nocookie.com/embed/VxtHuPmFC2g",
     description: `제작 기간: 22년 9월 ~ 12월 약 3달
 
 기획 의도: 
@@ -296,9 +296,9 @@ export const projectDatas: iProjectData[] = [
     ],
     downloadOptions: [
       {
-        name: "apk",
-        url: "",
-        icon: "",
+        name: "github",
+        url: "https://github.com/NaebujaSong/NewOK",
+        icon: `${GithubIcon}`,
       },
     ],
   },
@@ -308,7 +308,7 @@ export const projectDatas: iProjectData[] = [
     teamName: "plantity",
     category: "웹/앱",
     thumbnail: `${plantity}`,
-    youtubeUrl: "",
+    youtubeUrl: "https://www.youtube-nocookie.com/embed/-uu_TMo1Er0",
     description: `[ 개발 배경 및 목적 ]
     현대사회에서 거주 및 근무 환경, 인간관계 등의 이유로 정신적 피로가 증가하고 있다. 또한 코로나 시국을 겪으면서 타인과의 어울림이 차단되었고 관계 유지도 어려워졌다. 그 결과 정서적인 안정감을 주는 반려식물에 대한 관심도가 상승했다. 하지만 반려동물에 비해 반려식물은 생육 정보를 알고 키우기가 어렵다. 이에 따라 초보자도 쉽게 식물 키우기에 동참하도록 만들어 반려식물 문화 형성을 도모하는 앱을 개발하게 되었다. Plantity는 Plant와 Identity의 합성어로, 사용자와 식물이 함께 성장하는 것을 추구한다.
     
