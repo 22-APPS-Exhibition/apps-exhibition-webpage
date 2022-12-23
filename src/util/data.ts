@@ -161,7 +161,7 @@ export const projectDatas: iProjectData[] = [
     teamName: "세일즈송",
     category: "웹/앱",
     thumbnail: `${청파마켓}`,
-    youtubeUrl: "https://www.youtube-nocookie.com/embed/BKEw0e0sKPk",
+    youtubeUrl: "https://www.youtube-nocookie.com/embed/HVMUoxufFhc",
     description: `
 제작기간: 2022년 4월 1일~2022년 12월 21일
 
